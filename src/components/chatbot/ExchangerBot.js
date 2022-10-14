@@ -25,6 +25,16 @@ const ExchangerBot = (props) => (
             {
                 id: 'search',
                 user: true,
+                validator: (value) => {
+                 if (/^[0-9\b]+$/.test(value))
+                   {
+                     return true;
+                   }
+                 else
+                   {
+                     return'Please input numbers only.';
+                   }
+              },
                 trigger: '4',
             },
             {
